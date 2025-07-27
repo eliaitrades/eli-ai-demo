@@ -1,0 +1,39 @@
+
+<!DOCTYPE html>
+<html lang="zh-Hant">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Eli AI 實驗室｜體驗版</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <style>
+      body { font-family: sans-serif; padding: 2rem; background: #f9f9f9; }
+      .tab { margin-right: 1rem; cursor: pointer; font-weight: bold; }
+      textarea { width: 100%; height: 120px; padding: 0.5rem; }
+      button { margin-top: 1rem; padding: 0.5rem 1rem; }
+      .response { background: #eee; padding: 1rem; margin-top: 1rem; white-space: pre-wrap; }
+    </style>
+  </head>
+  <body>
+    <h1>Eli AI 實驗室｜體驗版</h1>
+    <p>請選擇下方模組並輸入內容體驗：</p>
+    <div>
+      <span class="tab">AI 交易助手</span>
+      <span class="tab">Eli AI 助教</span>
+    </div>
+    <textarea placeholder="請輸入你的交易紀錄 / 提問..."></textarea>
+    <br />
+    <button onclick="showResponse()">送出體驗</button>
+    <div id="response" class="response"></div>
+    <script>
+      function showResponse() {
+        const input = document.querySelector("textarea").value;
+        const resBox = document.getElementById("response");
+        if (input.includes("停損") || input.includes("突破")) {
+          resBox.textContent = "✅ 分析結果：\n1. 缺乏完整規劃。\n2. 可能受情緒影響。\n🧠 建議：建立明確進出場邏輯。";
+        } else {
+          resBox.textContent = "🧠 Eli 說：\n你可以觀察框的發動K棒或反向條件解除點，從那裡判斷發動位置。";
+        }
+      }
+    </script>
+  </body>
+</html>
